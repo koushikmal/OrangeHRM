@@ -31,7 +31,6 @@ public class BaseTest extends BaseClass {
 
 	@AfterClass
 	public void tearDown() throws InterruptedException {
-		//		logout();
 		Thread.sleep(3000);
 		driver.close();
 		driver.quit();
