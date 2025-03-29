@@ -45,13 +45,26 @@ public class OrangeHRMTests {
 		driver.findElement(By.xpath("//button[@class='oxd-button oxd-button--medium oxd-button--main orangehrm-login-button']")).click();
 
 		String pageTitle = driver.getTitle();
-		Assert.assertEquals("OrangeHRM", pageTitle);		
+		Assert.assertEquals("OrangeHRM", pageTitle);
+		
+		logout();
 	}
 
-	@Test(priority=2, enabled=false)
+	@Test(priority=2, enabled=true)
 	public void addEmployee(){
-
-
+		
+		login();
+		
+		driver.findElement(By.xpath("//span[text()='PIM']")).click();
+		driver.findElement(By.xpath("//a[text()='Add Employee']")).click();
+		driver.findElement(By.xpath("//input[@placeholder='First Name']")).sendKeys("Koushik");
+		driver.findElement(By.xpath("//input[@placeholder='Last Name']")).sendKeys("Mal");
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		
+		String expected = driver.findElement(By.xpath("//h6[normalize-space()='Personal Details']")).getText();
+		Assert.assertEquals("Personal Details", expected);
+		
+		logout();
 	}
 
 	public void login() {
@@ -61,18 +74,13 @@ public class OrangeHRMTests {
 		driver.findElement(By.xpath("//button[@class='oxd-button oxd-button--medium oxd-button--main orangehrm-login-button']")).click();
 	}
 
-	public void logout() throws InterruptedException {
-
-		Thread.sleep(3000);
+	public void logout() {
 		driver.findElement(By.xpath("//p[@class='oxd-userdropdown-name']")).click();
 		driver.findElements(By.xpath("//a[@class='oxd-userdropdown-link']")).get(3).click();
 	}
 
 	@AfterTest
-	public void tearDown() throws InterruptedException {
-
-		logout();
-		Thread.sleep(3000);
+	public void tearDown() {
 		driver.close();
 		driver.quit();
 	}
