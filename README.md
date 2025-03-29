@@ -63,3 +63,7 @@ OrangeHRM/
 ├── README.md                         # Project documentation
 └── .gitignore                        # Git ignore file for dependencies, IDE files, etc.
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
