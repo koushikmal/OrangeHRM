@@ -6,8 +6,7 @@
       <class name="orangeHRMDemo.OrangeHRMTests">
         <methods>
           <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="addEmployee"/>
+          <include name="fileUpload"/>
         </methods>
       </class> <!-- orangeHRMDemo.OrangeHRMTests -->
     </classes>
