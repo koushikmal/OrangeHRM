@@ -6,7 +6,7 @@
       <class name="orangeHRMDemo.OrangeHRMTests">
         <methods>
           <include name="setup"/>
-          <include name="fileUpload"/>
+          <include name="applyLeave"/>
         </methods>
       </class> <!-- orangeHRMDemo.OrangeHRMTests -->
     </classes>
