@@ -9,7 +9,6 @@ import tests.BaseTest;
 
 public class LoginPage extends BaseTest {
 
-
 	//All the locators of page
 
 	@FindBy(name="username")
@@ -26,7 +25,6 @@ public class LoginPage extends BaseTest {
 
 	@FindBy(xpath="//h5[text()='Login']")
 	WebElement txtLoginPage;
-
 
 	//Initialization of locators/variables
 	public LoginPage(WebDriver driver) {
@@ -66,5 +64,4 @@ public class LoginPage extends BaseTest {
 	public String currentUrl() {
 		return driver.getCurrentUrl();
 	}
-
 }

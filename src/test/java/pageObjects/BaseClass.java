@@ -7,4 +7,5 @@ public abstract class BaseClass {
 	public static WebDriver driver;
 	protected LoginPage loginpage;
 	protected DashboardPage dashboardpage;
+	protected PimPage pimpage;
 }

@@ -17,19 +17,16 @@ public class LoginTest extends BaseTest {
 
 	@Test(priority=2)
 	public void loginWithInvalidCredential() {
-
 		loginpage.setUserName("Admin");
 		loginpage.setPassword("admin123768");
 		loginpage.clickLoginButton();
 
 		String message_expected = "Invalid credentials";
 		Assert.assertTrue(loginpage.getInvalidText().contains(message_expected));
-
 	}
 
 	@Test(priority=3)
 	public void loginTestWithValidCredential() {
-
 		loginpage.setUserName("Admin");
 		loginpage.setPassword("admin123");
 		loginpage.clickLoginButton();
