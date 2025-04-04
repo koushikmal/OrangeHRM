@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeClass;
 import pageObjects.BaseClass;
 import pageObjects.DashboardPage;
 import pageObjects.LoginPage;
+import pageObjects.PimPage;
 
 public class BaseTest extends BaseClass {
 
@@ -21,18 +22,16 @@ public class BaseTest extends BaseClass {
 		driver.manage().window().maximize();
 		driver.get(baseUrl);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-	}
 
-	@BeforeClass
-	public void pgObjects() {
+		// Initialize Page Objects
 		loginpage = new LoginPage(driver);
 		dashboardpage = new DashboardPage(driver);
+		pimpage = new PimPage(driver);
 	}
 
 	@AfterClass
-	public void tearDown() throws InterruptedException {
-		Thread.sleep(3000);
-		driver.close();
+	public void tearDown() {
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.quit();
 	}
 
